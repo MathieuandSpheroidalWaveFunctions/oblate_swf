@@ -138,7 +138,7 @@ program oblfcn
 !
         real(knd) arg1,c,darg,step1,step2,step3,x,xneu
 !
-!  open input files
+!  open the input file
         open(1, file='oblfcn.dat')
 !
 !  read input data
