@@ -236,14 +236,14 @@
 
      These output files are also available using the subroutine version
      oblate_swf. Generation of each of the files is controlled by a logical
-     specified in the module param located before the program. False
-     suppresses the output file and true enables it. The logical debug
-     controls fort.30 and fort.40, the logical output controls fort.20
-     and fort.30 and warn controls fort.60. The logical suffix controls
-     whether the accuracy estimates given in fort.20 are followed by a letter
-     designating how the accuracy was determined. 'w' indicates it is based
-     on the Wronskian and 'e' indicates it is based on subtraction errors
-     involved in the calculations. Setting suffix = false suppresses the letter. 
+     specified in the module param. False suppresses the output file and
+     true enables it. The logical debug controls fort.30 and fort.40, the
+     logical output controls fort.20 and fort.30 and warn controls fort.60.
+     The logical suffix controls whether the accuracy estimates given in
+     fort.20 are followed by a letter designating how the accuracy was
+     determined. 'w' indicates it is based on the Wronskian and 'e' indicates
+     it is based on subtraction errors involved in the calculations. Setting
+     suffix = false suppresses the letter. 
 
    fort.20
 
