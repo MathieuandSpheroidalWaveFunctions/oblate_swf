@@ -1260,7 +1260,7 @@ if (debug) then
               if(knd.eq.kindq) write(40,525) r2c(li),ir2e(li),r2dc(li),ir2de(li)
 end if
 520           format(10x,'r2 = ',f17.14,i5,5x,'r2d = ',f17.14,i5)
-525           format(10x,'r2 = ',f34.31,i5,5x,'r2d = ',f34.31,i5)
+525           format(10x,'r2 = ',f33.30,i5,5x,'r2d = ',f33.30,i5)
 if (debug) then
               if(ix.eq.0) write(40,530) naccr
 530           format(12x,'r2 is accurate to ',I2,' decimal digits. r1,' &
@@ -1295,7 +1295,7 @@ if (debug) then
               if(knd.eq.kindd) write(40,570) r11c,ir11e,r1d1c,ir1d1e
               if(knd.eq.kindq) write(40,575) r11c,ir11e,r1d1c,ir1d1e
 570           format(10x,'r1 = ', f17.14,i5,5x,'r1d = ',f17.14,i5)
-575           format(10x,'r1 = ', f34.31,i5,5x,'r1d = ',f34.31,i5)
+575           format(10x,'r1 = ', f33.30,i5,5x,'r1d = ',f33.30,i5)
 end if
               r1c(li)=r11c
               ir1e(li)=ir11e
@@ -1508,7 +1508,7 @@ if (debug) then
 730           format(15x,'eta = ',f12.9,'; nee1 = ',i4,/,10x,'r1 = ', &
                       f17.14,i5,5x,'r1d = ',f17.14,i5)
 735                   format(15x,'eta = ',f12.9,'; nee1 = ',i4,/,10x,'r1 = ', &
-                      f34.31,i5,5x,'r1d = ',f34.31,i5)
+                      f33.30,i5,5x,'r1d = ',f33.30,i5)
 end if
                 if(nsub1.le.1.or.nsubd1.le.1) then
                 if(idir.eq.0) idir=-1
@@ -2575,10 +2575,10 @@ if (debug) then
                 if(knd.eq.kindq.and.iopang.eq.2) write(50,1495) s1c(jarg),is1e(jarg),s1dc(jarg),is1de(jarg)
 end if
 1480            format(12x,'s1 = ',f17.14,2x,i5)
-1485            format(12x,'s1 = ',f34.31,2x,i5)
+1485            format(12x,'s1 = ',f33.30,2x,i5)
 1490            format(12x,'s1 = ',f17.14,2x,i5,5x,'s1d = ',f17.14, &
                        2x,i5)
-1495            format(12x,'s1 = ',f34.31,2x,i5,5x,'s1d = ',f34.31, &
+1495            format(12x,'s1 = ',f33.30,2x,i5,5x,'s1d = ',f33.30, &
                        2x,i5)
 1500            continue
 1510          continue
