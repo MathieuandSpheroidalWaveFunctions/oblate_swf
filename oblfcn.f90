@@ -2502,8 +2502,8 @@ if (debug) then
 
                 if(ioparg.eq.1.and.iopang.eq.1) write(50,1430) barg(jarg),naccs(jarg)
                 if(ioparg.eq.1.and.iopang.eq.2) write(50,1435) barg(jarg),naccs(jarg),naccds(jarg)
-1430            format(1x,'eta = ',f17.14,'   accuracy = ',i2, ' digits.')
-1435            format(1x,'eta = ',f17.14,'   s1 and s1d accuracy = ', i2,' and ',i2,' digits.')
+1430            format(1x,'eta = ',f17.14,'   accuracy = ',i2,' digits.')
+1435            format(1x,'eta = ',f17.14,'   s1 and s1d accuracy = ',i2,' and ',i2,' digits.')
 end if
 if (output) then
                 if(ioparg.eq.0.and.iopang.eq.1) write(30,1440) arg(jarg),s1c(jarg),is1e(jarg),naccs(jarg)

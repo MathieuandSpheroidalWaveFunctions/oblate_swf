@@ -633,7 +633,7 @@ end if
         integer neeb(jnenmax),neeb1(jnebmax),limpsv(jnenmax), &
                 limp1sv(jnebmax),limnsv(jnenmax),jelimsv(jnenmax), &
                 jelim1sv(jnebmax),limjsv(jnebmax)
-        
+
         character chr_e, chr_w
         if (suffix) then
             chr_e = 'e'
@@ -1260,7 +1260,7 @@ if (debug) then
               if(knd.eq.kindq) write(40,525) r2c(li),ir2e(li),r2dc(li),ir2de(li)
 end if
 520           format(10x,'r2 = ',f17.14,i5,5x,'r2d = ',f17.14,i5)
-525           format(10x,'r2 = ',f33.30,i5,5x,'r2d = ',f33.30,i5)
+525           format(10x,'r2 = ',f34.31,i5,5x,'r2d = ',f34.31,i5)
 if (debug) then
               if(ix.eq.0) write(40,530) naccr
 530           format(12x,'r2 is accurate to ',I2,' decimal digits. r1,' &
@@ -1295,7 +1295,7 @@ if (debug) then
               if(knd.eq.kindd) write(40,570) r11c,ir11e,r1d1c,ir1d1e
               if(knd.eq.kindq) write(40,575) r11c,ir11e,r1d1c,ir1d1e
 570           format(10x,'r1 = ', f17.14,i5,5x,'r1d = ',f17.14,i5)
-575           format(10x,'r1 = ', f33.30,i5,5x,'r1d = ',f33.30,i5)
+575           format(10x,'r1 = ', f34.31,i5,5x,'r1d = ',f34.31,i5)
 end if
               r1c(li)=r11c
               ir1e(li)=ir11e
@@ -1506,9 +1506,9 @@ if (debug) then
 720           if(knd.eq.kindd) write(40,730) etaval1,nee1,r1ec,ir1ee,r1dec,ir1dee
               if(knd.eq.kindq) write(40,735) etaval1,nee1,r1ec,ir1ee,r1dec,ir1dee
 730           format(15x,'eta = ',f12.9,'; nee1 = ',i4,/,10x,'r1 = ', &
-                      f19.15,i5,5x,'r1d = ',f19.15,i5)
+                      f17.14,i5,5x,'r1d = ',f17.14,i5)
 735                   format(15x,'eta = ',f12.9,'; nee1 = ',i4,/,10x,'r1 = ', &
-                      f34.30,i5,5x,'r1d = ',f34.30,i5)
+                      f34.31,i5,5x,'r1d = ',f34.31,i5)
 end if
                 if(nsub1.le.1.or.nsubd1.le.1) then
                 if(idir.eq.0) idir=-1
@@ -1657,7 +1657,6 @@ if (debug) then
 end if
                     naccrt=min(match(li+1)-2,naccr1, &
                                      itestm-2)
-
                     naccr=naccrt
                     end if
                     if(ix.eq.1) then
@@ -2576,10 +2575,10 @@ if (debug) then
                 if(knd.eq.kindq.and.iopang.eq.2) write(50,1495) s1c(jarg),is1e(jarg),s1dc(jarg),is1de(jarg)
 end if
 1480            format(12x,'s1 = ',f17.14,2x,i5)
-1485            format(12x,'s1 = ',f33.30,2x,i5)
+1485            format(12x,'s1 = ',f34.31,2x,i5)
 1490            format(12x,'s1 = ',f17.14,2x,i5,5x,'s1d = ',f17.14, &
                        2x,i5)
-1495            format(12x,'s1 = ',f33.30,2x,i5,5x,'s1d = ',f33.30, &
+1495            format(12x,'s1 = ',f34.31,2x,i5,5x,'s1d = ',f34.31, &
                        2x,i5)
 1500            continue
 1510          continue
@@ -3982,14 +3981,14 @@ end if
                   qsum,qsump,r1c,r1dc,r2c,r2dc,rm,spsum,spsump,spdsum, &
                   spdsump,ten,termpq,test,testd,testm,testdm,testp,tm, &
                   wronc,wronca,wroncb,wront,x,xden,xcoef,xrhs
-        real(knd) anumt1,anumt2,anumt3,anumt4,dent1,dent2          
+        real(knd) anumt1,anumt2,anumt3,anumt4,dent1,dent2
         real(knd) drhor(maxdr),enr(maxd),enrneg(maxmp),fajo(lnum+1), &
                   prx(maxpdr),pdrx(maxpdr),qdl(lnum),qdr(maxq), &
                   qdqr(maxmp),ql(lnum),qr(maxq)
 !
 !  integer arrays
         integer ifajo(lnum+1),iqdl(lnum),iql(lnum)
-!       
+!
         ten=10.0e0_knd
         dec=ten**(-ndec-1)
         dconp=dec
@@ -4296,7 +4295,7 @@ end if
           nacct3=ndec-(max(ifsub,nsqsum)+numc3)
           if(nacct3.gt.ndec) nacct3=ndec
           nacct4=ndec-(max(ifsub,nsqnsum)+numc4)
-          if(nacct4.gt.ndec) nacct4=ndec 
+          if(nacct4.gt.ndec) nacct4=ndec
           naccnum=min(nacct1,nacct2,nacct3,nacct4)
           if(naccnum.lt.0) naccnum=0
           dent1=r1c*pdsum*ten**(ir1e+iqdsum)
@@ -4311,9 +4310,9 @@ end if
             naccd2=ndec-nspsum
             naccd1=ndec-nspdsum-nratio
             end if
-          nacclest=min(naccnum,naccd1,naccd2)  
+          nacclest=min(naccnum,naccd1,naccd2)
           if(nacclest.gt.naccr1) nacclest=naccr1
-          if(nacclest.gt.itestm-2) nacclest=itestm-2 
+          if(nacclest.gt.itestm-2) nacclest=itestm-2
           if(nacclest.lt.0) nacclest=0
             if(nacclest.gt.naccleg) then
             xrhs=wront-(qdsum+qndsum)*r1c*ten**(ir1e+iqdsum)+ &
@@ -4361,7 +4360,7 @@ end if
         nqnds=0
         if(qndsum/r2dc.eq.0.0e0_knd) nqnds=-ndec
         if(m.ne.0.and.iopqnsum.ne.0.and.qndsum/r2dc.ne.0.0e0_knd) &
-                      nqnds=int(log10(abs(qndsum/r2dc)))             
+                      nqnds=int(log10(abs(qndsum/r2dc)))
         if(nqns.lt.(-ndec-1).and.nqnds.lt.(-ndec-1)) iopqnsum=0
         if(qnsum.eq.0.0e0_knd.and.qndsum.eq.0.0e0_knd) iopqnsum=0
         npds=0
