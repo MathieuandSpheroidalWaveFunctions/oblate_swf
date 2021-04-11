@@ -1208,7 +1208,7 @@ if (debug) then
               if(knd.eq.kindq) write(40,525) r2c(li),ir2e(li),r2dc(li),ir2de(li)
 end if
 520           format(10x,'r2 = ',f17.14,i5,5x,'r2d = ',f17.14,i5)
-525           format(10x,'r2 = ',f34.31,i5,5x,'r2d = ',f34.31,i5)
+525           format(10x,'r2 = ',f33.30,i5,5x,'r2d = ',f33.30,i5)
 if (debug) then
               if(ix.eq.0) write(40,530) naccr
 530           format(12x,'r2 is accurate to ',I2,' decimal digits. r1,' &
@@ -1243,7 +1243,7 @@ if (debug) then
               if(knd.eq.kindd) write(40,570) r11c,ir11e,r1d1c,ir1d1e
               if(knd.eq.kindq) write(40,575) r11c,ir11e,r1d1c,ir1d1e
 570           format(10x,'r1 = ', f17.14,i5,5x,'r1d = ',f17.14,i5)
-575           format(10x,'r1 = ', f34.31,i5,5x,'r1d = ',f34.31,i5)
+575           format(10x,'r1 = ', f33.30,i5,5x,'r1d = ',f33.30,i5)
 end if
               r1c(li)=r11c
               ir1e(li)=ir11e
@@ -1456,7 +1456,7 @@ if (debug) then
 730           format(15x,'eta = ',f12.9,'; nee1 = ',i4,/,10x,'r1 = ', &
                       f17.14,i5,5x,'r1d = ',f17.14,i5)
 735                   format(15x,'eta = ',f12.9,'; nee1 = ',i4,/,10x,'r1 = ', &
-                      f34.31,i5,5x,'r1d = ',f34.31,i5)
+                      f33.30,i5,5x,'r1d = ',f33.30,i5)
 end if
                 if(nsub1.le.1.or.nsubd1.le.1) then
                 if(idir.eq.0) idir=-1
@@ -2497,8 +2497,8 @@ end if
 if (debug) then
                 if(ioparg.eq.0.and.iopang.eq.1) write(50,1420) arg(jarg),naccs(jarg)
                 if(ioparg.eq.0.and.iopang.eq.2) write(50,1425) arg(jarg),naccs(jarg),naccds(jarg)
-1420            format(1x,'theta = ',f17.14,'   accuracy = ',i2, ' digits.')
-1425            format(1x,'theta = ',f17.14,'   s1 and s1d accuracy = ', i2,' and ',i2,' digits.')
+1420            format(1x,'theta = ',f19.14,'   accuracy = ',i2, ' digits.')
+1425            format(1x,'theta = ',f19.14,'   s1 and s1d accuracy = ', i2,' and ',i2,' digits.')
 
                 if(ioparg.eq.1.and.iopang.eq.1) write(50,1430) barg(jarg),naccs(jarg)
                 if(ioparg.eq.1.and.iopang.eq.2) write(50,1435) barg(jarg),naccs(jarg),naccds(jarg)
@@ -2509,8 +2509,8 @@ if (output) then
                 if(ioparg.eq.0.and.iopang.eq.1) write(30,1440) arg(jarg),s1c(jarg),is1e(jarg),naccs(jarg)
                 if(ioparg.eq.0.and.iopang.eq.2) write(30,1450) arg(jarg),s1c(jarg),is1e(jarg),s1dc(jarg), &
                                                                is1de(jarg),naccs(jarg),naccds(jarg)
-1440            format(1x,f17.14,2x,f17.14,2x,i5,2x,', ',i2)
-1450            format(1x,f17.14,2x,f17.14,2x,i5,2x,f17.14,2x,i5,2x,i2,', ',i2)
+1440            format(1x,f19.14,2x,f17.14,2x,i5,2x,', ',i2)
+1450            format(1x,f19.14,2x,f17.14,2x,i5,2x,f17.14,2x,i5,2x,i2,', ',i2)
                 if(ioparg.eq.1.and.iopang.eq.1) write(30,1460) barg(jarg),s1c(jarg),is1e(jarg),naccs(jarg)
                 if(ioparg.eq.1.and.iopang.eq.2) write(30,1470) barg(jarg),s1c(jarg),is1e(jarg),s1dc(jarg), &
                                                                is1de(jarg),naccs(jarg),naccds(jarg)
@@ -2524,10 +2524,10 @@ if (debug) then
                 if(knd.eq.kindq.and.iopang.eq.2) write(50,1495) s1c(jarg),is1e(jarg),s1dc(jarg),is1de(jarg)
 end if
 1480            format(12x,'s1 = ',f17.14,2x,i5)
-1485            format(12x,'s1 = ',f34.31,2x,i5)
+1485            format(12x,'s1 = ',f33.30,2x,i5)
 1490            format(12x,'s1 = ',f17.14,2x,i5,5x,'s1d = ',f17.14, &
                        2x,i5)
-1495            format(12x,'s1 = ',f34.31,2x,i5,5x,'s1d = ',f34.31, &
+1495            format(12x,'s1 = ',f33.30,2x,i5,5x,'s1d = ',f33.30, &
                        2x,i5)
 1500            continue
 1510          continue
