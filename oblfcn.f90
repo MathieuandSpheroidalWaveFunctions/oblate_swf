@@ -1709,9 +1709,9 @@ if (debug) then
               if(knd.eq.kindd) write(40,820) naccint,r2ic,ir2ie,r2dic,ir2die
               if(knd.eq.kindq) write(40,825) naccint,r2ic,ir2ie,r2dic,ir2die
 820           format(15x,'accuracy in decimal digits = ',i2,/,10x, &
-                     'r2 = ',f19.15,i5,5x,'r2d = ',f19.15,i5)
+                     'r2 = ',f17.14,i5,5x,'r2d = ',f17.14,i5)
 825                  format(15x,'accuracy in decimal digits = ',i2,/,10x, &
-                     'r2 = ',f34.30,i5,5x,'r2d = ',f34.30,i5)
+                     'r2 = ',f33.30,i5,5x,'r2d = ',f33.30,i5)
 end if
               if(istartint.eq.2) go to 1320
 830           continue
@@ -2247,11 +2247,11 @@ if (debug) then
 1270          if(knd.eq.kindd) write(40,1280) naccetas,etaval,nee,r2ec,ir2ee,r2dec,ir2dee
               if(knd.eq.kindq) write(40,1285) naccetas,etaval,nee,r2ec,ir2ee,r2dec,ir2dee
 1280          format(15x,'r2eta accuracy = ',i2,' decimal digits; eta', &
-                     ' = ',f12.9,'; nee = ',i4,/,10x,'r2 = ', f19.15,i5, &
-                     5x,'r2d = ',f19.15,i5)
+                     ' = ',f17.14,'; nee = ',i4,/,10x,'r2 = ', f17.14,i5, &
+                     5x,'r2d = ',f17.14,i5)
 1285                  format(15x,'r2eta accuracy = ',i2,' decimal digits; eta', &
-                     ' = ',f12.9,'; nee = ',i4,/,10x,'r2 = ', f34.30,i5, &
-                     5x,'r2d = ',f34.30,i5)
+                     ' = ',f17.14,'; nee = ',i4,/,10x,'r2 = ', f33.30,i5, &
+                     5x,'r2d = ',f33.30,i5)
 end if
               iopeta=3
                 if(naccetas.lt.naccetamax-2.or.nee.eq.neta) then
