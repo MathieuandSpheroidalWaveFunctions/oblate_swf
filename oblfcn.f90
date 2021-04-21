@@ -1668,7 +1668,7 @@ end if
               wronc=wronca-wroncb
               naccint=-int(log10(abs((wronc-wront)/wront)+dec))
               if(naccint.lt.0) naccint=0
-              if(naccint.gt.ndec) naccint=ndec
+              if(naccint.gt.ndec-1) naccint=ndec-1
               jacc=int(log10(abs(wronca/wroncb)))
                 if(jacc.gt.0) then
                 isubc=isub-jacc
@@ -1972,7 +1972,7 @@ end if
                     r2nc*r1dc(li)*ten**(ir2ne+ir1de(li))
               naccneu0=-int(log10(abs((wronc-wront)/wront)+dec))
               if(naccneu0.lt.0) naccneu0=0
-              if(naccneu0.gt.ndec) naccneu0=ndec
+              if(naccneu0.gt.ndec-1) naccneu0=ndec-1
                 if(naccneu0.ge.minacc.and.naccneu0p.ge.minacc.and. &
                    naccneu0p2.ge.minacc) then
                 iopint=0
@@ -4222,7 +4222,7 @@ end if
         wronc=wronca-wroncb
         naccleg=-int(log10(abs((wronc-wront)/wront)+dec))
         nstest=max(nspsum,nspdsum)
-        if(naccleg.gt.ndec) naccleg=ndec
+        if(naccleg.gt.ndec-1) naccleg=ndec-1
           if(nsdrhor1.gt.0.and.naccleg.lt.minacc.and.x.le.0.01e0_knd &
               .and.(naccleg.gt.1.or.nstest.lt.10)) then
           anumt1=qdsum*r1c*ten**(ir1e+iqdsum)
@@ -5104,6 +5104,7 @@ end if
         wroncm=max(abs(wronca),abs(wroncb))
         nacceta=-int(log10(abs((wronc-wront)/wront)+dec))
         if(nacceta.lt.0) nacceta=0
+        if(nacceta.gt.ndec-1) nacceta=ndec-1
 160     if(abs(r2c).ge.1.0e0_knd) go to 170
         r2c=r2c*ten
         ir2e=ir2e-1
